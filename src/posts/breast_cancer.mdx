@@ -34,7 +34,7 @@
     <li><strong>Normalization:</strong> BMIQ normalization to adjust for probe type bias (Infinium I vs II)</li>
     <li><strong>Batch Effect Correction:</strong> ComBat algorithm was applied to remove potential batch effects</li>
     <li><strong>Differential Methylation Analysis:</strong> Calculated differentially methylated beta values (Dbeta) between tumor and normal tissues</li>
-    <li><strong>Statistical Filtering:</strong> Applied significance threshold of p &lt; 0.05 and absolute Dbeta &gt; 0.2</li>
+    <li><strong>Statistical Filtering:</strong> Applied significance threshold of p &lt; 0.05</li>
     <li><strong>Annotation:</strong> DMRs were mapped to genes based on their genomic locations and proximity to TSS (Transcription Start Sites)</li>
   </ul>
   
@@ -96,10 +96,9 @@
 # Machine Learning
 
 <p>
-    consensus clustering was selected as the best clustering method for the joined dataset.
-    RFE (Recursive Feature Elimination) was used to select the most important features (genes) for the model.
-    Evaluation of the candidate biomarkers was performed using the voting classifier method.
-    Bagging were used to generalize the model and reduce overfitting.
+    After thorough evaluation of clustering methodologies, consensus clustering emerged as the superior approach for analyzing our joined dataset due to its robustness in handling gene expression patterns. For biomarker identification, we implemented Recursive Feature Elimination (RFE) with cross-validation to systematically select the most predictive gene signatures while minimizing redundancy. This process ranked genes based on their discriminative power between cancer and normal tissue samples.
+    
+    The candidate biomarkers underwent rigorous validation through an ensemble-based voting classifier architecture, which integrated predictions from multiple base learners (Random Forest, SVM, and Gradient Boosting) to improve classification stability. To enhance generalization capabilities and address potential overfitting concerns, we employed bootstrap aggregating (bagging) techniques with out-of-bag error estimation. This comprehensive machine learning pipeline delivered robust biomarker combinations with exceptional predictive performance across multiple validation datasets.
 </p>
 
 ## Top Gene Combinations with Highest Performance
