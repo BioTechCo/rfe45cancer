@@ -6,10 +6,10 @@ import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: 'Statistical Analysis Blog',
-  description: 'A blog for statistical analysis and data visualization',
-};
+// export const metadata: Metadata = {
+//   title: 'RFE45Cancer: DNA methylation and cancer',
+//   description: 'Showcase of DNA methylation and cancer research',
+// };
 
 export default function RootLayout({
   children,

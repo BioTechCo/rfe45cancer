@@ -1,0 +1,67 @@
+# Datasets
+
+---
+
+- TCGA-BRCA 美國癌症基因體圖譜計畫
+- GSE66313 高通量基因表達數據庫
+
+<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch' }}>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <ImageGallery 
+            image="/breast/vp_TCGA_BRCA.png"
+            title="TCGA-BRCA Volcano Plot"
+            alt="Volcano Plot"
+        />
+    </div>
+    <div style={{ flex: 1, padding: '10px' }}>
+        # Description
+        By using ChAMP package, a volcano plot can be generated to visualize the differentially methylated regions (DMRs) in the TCGA-BRCA dataset. The volcano plot displays the relationship between the significance (p-value) and the magnitude of change (fold change) of the DMRs.
+    </div>
+</div>
+
+---
+
+## GSE66313
+
+Preprocessing of GSE66313 and  data using the ChAMP package. 
+differentially methylated beta values are calculated.
+Significant DMRs are identified for every gene.
+
+<DbetaPie dataset="GSE66313"/>
+<DbetaPie dataset="TCGA_BRCA_20250119"/>
+
+## Joined Data Analysis
+
+Below is the hierarchical clustering of breast cancer data from multiple sources:
+
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
+    <ImageGallery 
+        image="/breast/planA/joined/section_5/hierarchical_clustering_compare.png"
+        title="Hierarchical Clustering Comparison"
+        alt="Comparison of different clustering methods"
+    />
+    
+    <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
+        <div style={{ flex: 1, padding: '10px' }}>
+            <ImageGallery 
+                image="/breast/planA/joined/section_5/hierarchical_clustering_simple_sum.png"
+                title="Simple Sum Clustering"
+                alt="Hierarchical clustering using simple sum"
+            />
+        </div>
+        <div style={{ flex: 1, padding: '10px' }}>
+            <ImageGallery 
+                image="/breast/planA/joined/section_5/hierarchical_clustering_weighted_sum.png"
+                title="Weighted Sum Clustering"
+                alt="Hierarchical clustering using weighted sum"
+            />
+        </div>
+        <div style={{ flex: 1, padding: '10px' }}>
+            <ImageGallery 
+                image="/breast/planA/joined/section_5/hierarchical_clustering_consensus.png"
+                title="Consensus Clustering"
+                alt="Hierarchical clustering using consensus method"
+            />
+        </div>
+    </div>
+</div>

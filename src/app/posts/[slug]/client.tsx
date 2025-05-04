@@ -1,8 +1,7 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import BlogPost from '@/components/BlogPost';
-import { BlogPost as BlogPostType, PostData } from '@/types';
+import { PostData } from '@/types';
 
 interface ClientComponentProps {
   slug: string;
@@ -12,17 +11,14 @@ interface ClientComponentProps {
 export default function ClientComponent({ slug, postData }: ClientComponentProps) {
   const MDXContent = dynamic(() => import(`@/posts/${slug}.mdx`));
 
-  const post: BlogPostType = {
-    title: postData.title,
-    date: postData.date,
-    content: <MDXContent />,
-    volcano_plot: postData.volcano_plot || "",
-    plot: postData.plot || "",
-  };
-
   return (
     <div className="container mx-auto px-4 py-8">
-      <BlogPost post={post} />
+      <article className="bg-white p-8 rounded-lg shadow-md">
+        <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+        <div className="prose max-w-none">
+          <MDXContent />
+        </div>
+      </article>
     </div>
   );
 }

@@ -1,32 +1,64 @@
----
-title: 'RFE on Breast Cancer'
-excerpt: 'Recursive Feature Elimination on Breast Cancer datasets.'
-tcga_volcano_plot:
-  - /breast/vp_TCGA_BRCA.png
-first_pca:
-  - /breast/planA/TCGA_BRCA_20250119/split80train/section_2/pca.html
-second_pca:
-  - /breast/planA/GSE66313/split80train/section_2/pca.html
-dbeta_TSS_threshold_joined:
-  - /breast/planA/joined/section_2/dbeta_TSS_threshold_joined.csv
+<ImageGallery 
+    image="/breast/vp_TCGA_BRCA.png"
+    title="Volcano Plot"
+    alt="Volcano Plot"
+/>
 
----
+## Interactive Data Visualization
 
-# Introduction to Statistical Analysis
+Below is an interactive visualization of our PCA analysis:
 
-Statistical analysis is a crucial tool for understanding data. This post explores key concepts such as hypothesis testing, regression analysis, and data visualization.
+<PlotGallery
+    plot="/breast/planA/TCGA_BRCA_20250119/split80train/section_2/pca.html"
+    title="Interactive Plot"
+    width="100%"
+    height="600px"
+/>
 
-## Hypothesis Testing
+<CsvVisualizer 
+  csvPath="/breast/planA/GSE66313/split80train/section_2/dbeta_TSS_0.26.csv" 
+  title="GSE66313 Breast Cancer Methylation Data"
+/>
 
-Hypothesis testing allows us to make inferences about populations based on sample data. For example, we can test whether a new treatment is more effective than a placebo.
+<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch', marginTop: '20px', marginBottom: '20px' }}>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <CsvChart 
+            title="Voting Performance Metrics" 
+            subtitle="Classification Performance" 
+            csvPath="/breast/planA/joined/split20test/section_6/Voting_metrics.csv" 
+            chartType="donut"
+            footerText="Shows key metrics like accuracy, precision, and recall"
+        />
+    </div>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <CsvChart 
+            title="Average Performance" 
+            subtitle="Aggregated Metrics" 
+            csvPath="/breast/planA/joined/split20test/section_6/Voting_metrics_avg.csv" 
+            chartType="pie"
+            footerText="Showing average performance across all models"
+        />
+    </div>
+</div>
 
 
-## Data Visualization
-
-Visualizations like the one below help interpret complex datasets.
-
-![Sample Image](/images/vp_TCGA_BRCA.png)
-
-For interactive exploration, check out the Plotly graph below:
-
-[Interactive Plot](/plots/pca.html)
+<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch', marginTop: '20px', marginBottom: '20px' }}>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <CsvChart 
+            title="Voting Performance Metrics" 
+            subtitle="Classification Performance" 
+            csvPath="/breast/planA/joined/split20test/section_6/Voting_metrics.csv" 
+            chartType="donut"
+            footerText="Shows key metrics like accuracy, precision, and recall"
+        />
+    </div>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <CsvChart 
+            title="Average Performance" 
+            subtitle="Aggregated Metrics" 
+            csvPath="/breast/planA/joined/split20test/section_6/Voting_metrics_avg.csv" 
+            chartType="pie"
+            footerText="Showing average performance across all models"
+        />
+    </div>
+</div>
