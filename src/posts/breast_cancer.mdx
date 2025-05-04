@@ -21,7 +21,7 @@
 
 ---
 
-## Dbeta Calculation and DMR Filtering
+# Dbeta Calculation and DMR Filtering
 
 <div className="methodology-explanation">
   <p>
@@ -54,17 +54,15 @@
 </div>
 
 
-## Joined Data Analysis
+# Joined Data Analysis
 
-Below is the hierarchical clustering of breast cancer data from multiple sources:
+<p>
+    After filtering the DMRs from both datasets, we joined the two datasets to create a comprehensive dataset for further analysis.
+    The joined dataset contains a total of 88 gene, whose similarity was calculated using GO (Gene Ontology) terms.
+    The GO terms were obtained from the Ensembl database, and the similarity was calculated using the GOSemSim package in R.
+</p>
 
 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
-    <ImageGallery 
-        image="/breast/planA/joined/section_5/hierarchical_clustering_compare.png"
-        title="Hierarchical Clustering Comparison"
-        alt="Comparison of different clustering methods"
-    />
-    
     <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
         <div style={{ flex: 1, padding: '10px' }}>
             <ImageGallery 
@@ -88,4 +86,27 @@ Below is the hierarchical clustering of breast cancer data from multiple sources
             />
         </div>
     </div>
+    <ImageGallery 
+        image="/breast/planA/joined/section_5/hierarchical_clustering_compare.png"
+        title="Hierarchical Clustering Comparison"
+        alt="Comparison of different clustering methods"
+    />
 </div>
+
+# Machine Learning
+
+<p>
+    consensus clustering was selected as the best clustering method for the joined dataset.
+    RFE (Recursive Feature Elimination) was used to select the most important features (genes) for the model.
+    Evaluation of the candidate biomarkers was performed using the voting classifier method.
+    Bagging were used to generalize the model and reduce overfitting.
+</p>
+
+## Top Gene Combinations with Highest Performance
+
+The table below shows the gene combinations that achieved the highest classification performance:
+
+<MdxTable markdown={`| Gene Set | Gene 1 | Gene 2 | Gene 3 | Gene 4 | Accuracy | Recall | Specificity | Precision | F1 Score | AUC |
+|---------|--------|--------|--------|--------|----------|--------|-------------|-----------|----------|-----|
+| Set 1 | CFTR | CNTNAP5 | PFN3 | SLC2A10 | 0.932 | 1.000 | 0.864 | 0.880 | 0.936 | 0.997 |
+| Set 2 | CNTNAP5 | GNG4 | RGS22 | SLC2A2 | 0.932 | 1.000 | 0.864 | 0.880 | 0.936 | 0.996 |`} />

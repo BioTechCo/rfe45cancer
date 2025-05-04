@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ImageGallery from '@/components/ImageGallery';
 import PlotGallery from '@/components/PlotGallery';
 import DbetaPie from '@/components/DbetaPie';
+import MdxTable from '@/components/MdxTable';
 
 // This file allows you to provide custom React components 
 // to be used in MDX files. You can import and use any
@@ -28,6 +29,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ImageGallery,
     PlotGallery,
     DbetaPie,
+    MdxTable,
     ...components,
   };
 }
