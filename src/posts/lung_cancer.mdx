@@ -1,3 +1,5 @@
+import { metadata } from '../metadata/lung_cancer';
+
 # Datasets
 
 ---
@@ -8,7 +10,7 @@
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch' }}>
     <div style={{ flex: 1, padding: '10px' }}>
         <ImageGallery 
-            image="/lung/vp_TCGA_LUAD_LUSC.png"
+            image={metadata.volcano_plot}
             title="TCGA-LUAD_LUSC Volcano Plot"
             alt="Volcano Plot"
         />
@@ -66,28 +68,28 @@
     <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
         <div style={{ flex: 1, padding: '10px' }}>
             <ImageGallery 
-                image="/lung/planA/joined/section_5/hierarchical_clustering_simple_sum.png"
+                image={metadata.hc_ss}
                 title="Simple Sum Clustering"
                 alt="Hierarchical clustering using simple sum"
             />
         </div>
         <div style={{ flex: 1, padding: '10px' }}>
             <ImageGallery 
-                image="/lung/planA/joined/section_5/hierarchical_clustering_weighted_sum.png"
+                image={metadata.hc_ws}
                 title="Weighted Sum Clustering"
                 alt="Hierarchical clustering using weighted sum"
             />
         </div>
         <div style={{ flex: 1, padding: '10px' }}>
             <ImageGallery 
-                image="/lung/planA/joined/section_5/hierarchical_clustering_consensus.png"
+                image={metadata.hc_cs}
                 title="Consensus Clustering"
                 alt="Hierarchical clustering using consensus method"
             />
         </div>
     </div>
     <ImageGallery 
-        image="/lung/planA/joined/section_5/hierarchical_clustering_compare.png"
+        image={metadata.hc_comp}
         title="Hierarchical Clustering Comparison"
         alt="Comparison of different clustering methods"
     />

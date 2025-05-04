@@ -10,8 +10,6 @@ export interface Post {
   volcano_plot?: string;
   pca1?: string;
   pca2?: string;
-  dbeta1?:string;
-  dbeta2:string;
   joined_dbeta?:string;
   hc_ss?:string;
   hc_ws?:string;
