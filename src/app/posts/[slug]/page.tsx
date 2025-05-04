@@ -25,13 +25,9 @@ async function getPostData(slug: string): Promise<PostData | null> {
   }
 }
 
-// Using the pattern from the Next.js documentation for dynamic parameters
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = await params;
+// Using a more direct approach without PageProps or custom interfaces
+export default async function PostPage({ params }: any) {
+  const slug = params.slug;
   
   const postData = await getPostData(slug);
 
