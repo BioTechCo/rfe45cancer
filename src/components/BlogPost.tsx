@@ -1,9 +1,9 @@
-import { Post } from '@/types';
+import { BlogPost as BlogPostType } from '@/types';
 import ImageGallery from './ImageGallery';
 import PlotGallery from './PlotGallery';
 
 interface BlogPostProps {
-  post: Post;
+  post: BlogPostType;
 }
 
 export default function BlogPost({ post }: BlogPostProps) {
@@ -13,8 +13,17 @@ export default function BlogPost({ post }: BlogPostProps) {
       <p className="text-gray-600 mb-6">{post.date}</p>
       <div className="prose max-w-none">{post.content}</div>
       
-      <ImageGallery images={post.images} />
-      <PlotGallery plots={post.plots} />
+      {post.volcano_plot && (
+        <ImageGallery
+          image={post.volcano_plot}
+          title="Volcano Plot"
+          alt="Volcano Plot"
+        />
+      )}
+      
+      {post.plots && post.plots.length > 0 && (
+        <PlotGallery plots={post.plots} />
+      )}
     </article>
   );
 }

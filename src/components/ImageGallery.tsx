@@ -1,36 +1,29 @@
 import Image from 'next/image';
 
 interface ImageGalleryProps {
-    images: string[];
+    image: string;
     title?: string;
-    altPrefix?: string;
+    alt?: string;
     width?: number;
     height?: number;
 }
 
 export default function ImageGallery({
-    images,
-    title = "Images",
-    altPrefix = "Statistical image",
-    width = 800,
-    height = 600
+    image,
+    title = "example title",
+    alt = "example image",
 }: ImageGalleryProps) {
-    if (images.length === 0) return null;
+    if (image.length === 0) return null;
 
     return (
-        <div className="mt-6">
-            <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-            {images.map((image, index) => (
-                <div key={index} className="mb-4">
-                    <Image
-                        src={image}
-                        alt={`${altPrefix} ${index + 1}`}
-                        width={width}
-                        height={height}
-                        className="rounded-lg"
-                    />
-                </div>
-            ))}
+        <div className="my-6">
+            <h2 className="text-2xl font-semibold mb-4">Volcano Plot</h2>
+            <img
+                src={image}
+                title={title}
+                alt={alt}
+                className="max-w-full h-auto"
+            />
         </div>
     );
 }

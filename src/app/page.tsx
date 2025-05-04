@@ -2,19 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import PostList from '@/app/components/PostList';
-
-interface Post {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-}
+import { ListPost } from '@/types';
 
 export default async function Home() {
   const postsDirectory = path.join(process.cwd(), 'src', 'posts');
   const filenames = fs.readdirSync(postsDirectory).filter((filename) => filename.endsWith('.mdx'));
 
-  const posts: Post[] = filenames
+  const posts: ListPost[] = filenames
     .map((filename) => {
       const filePath = path.join(postsDirectory, filename);
       const fileContents = fs.readFileSync(filePath, 'utf-8');
@@ -36,7 +30,7 @@ export default async function Home() {
         excerpt: data.excerpt,
       };
     })
-    .filter((post): post is Post => post !== null)
+    .filter((post): post is ListPost => post !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
