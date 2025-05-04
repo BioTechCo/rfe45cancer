@@ -8,11 +8,9 @@ interface PlotGalleryProps {
 export default function PlotGallery({
   plot,
   title = "Interactive Plot",
-  width = "50%",
+  width = "100%",
   height = "600px"
 }: PlotGalleryProps) {
-  if (plot.length === 0) return null;
-
   return (
     <div className="mt-6">
       <h2 className="text-2xl font-semibold mb-4">{title}</h2>

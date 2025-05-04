@@ -48,10 +48,27 @@ import { metadata } from '../metadata/rectal_cancer';
 
 <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
     <div style={{ flex: 1, padding: '10px' }}>
-        <DbetaPie dataset="GSE199057" dataset_name="GSE199057" />
+        <DbetaPie dataset="GDC_rectal_tissue_450k" dataset_name="TCGA-COAD" />
     </div>
     <div style={{ flex: 1, padding: '10px' }}>
-        <DbetaPie dataset="GDC_rectal_tissue_450k" dataset_name="TCGA-COAD" />
+        <DbetaPie dataset="GSE199057" dataset_name="GSE199057" />
+    </div>
+</div>
+
+# Principal Component Analysis (PCA)
+
+<div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <PlotGallery 
+            plot={metadata.pca1}
+            title="PCA of TCGA-COAD"
+        />
+    </div>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <PlotGallery 
+            plot={metadata.pca2}
+            title="PCA of GSE199057"
+        />
     </div>
 </div>
 

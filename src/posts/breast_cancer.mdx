@@ -48,13 +48,29 @@ import { metadata } from '../metadata/breast_cancer';
 
 <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
     <div style={{ flex: 1, padding: '10px' }}>
-        <DbetaPie dataset="GSE66313" dataset_name="GSE66313" />
+        <DbetaPie dataset="TCGA_BRCA_20250119" dataset_name="TCGA-BRCA" />
     </div>
     <div style={{ flex: 1, padding: '10px' }}>
-        <DbetaPie dataset="TCGA_BRCA_20250119" dataset_name="TCGA-BRCA" />
+        <DbetaPie dataset="GSE66313" dataset_name="GSE66313" />
     </div>
 </div>
 
+# Principal Component Analysis (PCA)
+
+<div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <PlotGallery 
+            plot={metadata.pca1}
+            title="PCA of TCGA-BRCA"
+        />
+    </div>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <PlotGallery 
+            plot={metadata.pca2}
+            title="PCA of GSE66313"
+        />
+    </div>
+</div>
 
 # Joined Data Analysis
 

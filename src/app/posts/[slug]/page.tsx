@@ -31,7 +31,6 @@ export default async function PostPage({
 }: {
   params: { slug: string };
 }) {
-  // Explicitly unwrap the params Promise as per the docs
   const { slug } = await params;
   
   const postData = await getPostData(slug);
