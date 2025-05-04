@@ -1,0 +1,36 @@
+{
+    "feature_counts": [
+        {
+            "name": "Body",
+            "value": 10586
+        },
+        {
+            "name": "TSS200",
+            "value": 1915
+        },
+        {
+            "name": "TSS1500",
+            "value": 5766
+        },
+        {
+            "name": "5'UTR",
+            "value": 2221
+        },
+        {
+            "name": "1stExon",
+            "value": 952
+        },
+        {
+            "name": "3'UTR",
+            "value": 933
+        },
+        {
+            "name": "ExonBnd",
+            "value": 183
+        }
+    ],
+    "dbeta": {
+        "hyper": 9355,
+        "hypo": 13201
+    }
+}
