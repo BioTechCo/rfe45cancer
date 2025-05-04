@@ -1,17 +1,13 @@
 "use client";
 
 import { ListPost } from '@/types';
+import { handleNavigation } from '@/utils/navigation';
 
 interface PostListProps {
   posts: ListPost[];
 }
 
 export default function PostList({ posts }: PostListProps) {
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    window.location.href = href;
-  };
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => {

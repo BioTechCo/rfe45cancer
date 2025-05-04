@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react';
-import Link from 'next/link';
 import ImageGallery from '@/components/ImageGallery';
+import { handleNavigation } from '@/utils/navigation';
 
 export default function About() {
   return (
@@ -32,10 +34,15 @@ export default function About() {
             { name: "Rectal Cancer", link: "/posts/rectal_cancer" },
             { name: "Stomach Cancer", link: "/posts/stomach_cancer" }
           ].map((cancer, index) => (
-            <Link href={cancer.link} key={index} className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+            <a 
+              href={cancer.link} 
+              onClick={(e) => handleNavigation(e, cancer.link)} 
+              key={index} 
+              className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors"
+            >
               <h3 className="text-xl font-medium text-blue-600">{cancer.name}</h3>
               <p className="text-gray-600 mt-2">View analysis and findings</p>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
@@ -115,7 +122,7 @@ export default function About() {
         </p>
         <div className="bg-gray-50 p-4 rounded-lg">
           <h3 className="font-medium">Contact Information:</h3>
-          <p className="mt-2">Email: <a href="mailto:contact@rfe45cancer.org" className="text-blue-600 hover:underline">contact@rfe45cancer.org</a></p>
+          <p className="mt-2">Github: <a href="https://github.com/BioTechCo/main_project" className="text-blue-600 hover:underline">https://github.com/BioTechCo/main_project</a></p>
         </div>
       </div>
     </div>
