@@ -10,10 +10,11 @@ export default function BlogPost({ post }: BlogPostProps) {
   return (
     <article className="bg-white p-8 rounded-lg shadow-md">
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+      <p className="text-gray-600 mb-6">{post.date}</p>
       <div className="prose max-w-none">{post.content}</div>
       
-      <ImageGallery images={post.tcga_volcano_plot} />
-      <PlotGallery plots={post.first_pca} />
+      <ImageGallery images={post.images} />
+      <PlotGallery plots={post.plots} />
     </article>
   );
 }
