@@ -8,7 +8,7 @@ export interface Post {
   content?: ReactNode;
   excerpt?: string;
   volcano_plot?: string;
-  plots?: string[];
+  plot?: string;
 }
 
 export type BlogPost = Omit<Post, 'excerpt'> & { content: ReactNode };

@@ -17,7 +17,7 @@ export default function ClientComponent({ slug, postData }: ClientComponentProps
     date: postData.date,
     content: <MDXContent />,
     volcano_plot: postData.volcano_plot || "",
-    plots: postData.plots || [],
+    plot: postData.plot || "",
   };
 
   return (

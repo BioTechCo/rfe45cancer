@@ -21,8 +21,16 @@ export default function BlogPost({ post }: BlogPostProps) {
         />
       )}
       
-      {post.plots && post.plots.length > 0 && (
+      {/* {post.plots && post.plots.length > 0 && (
         <PlotGallery plots={post.plots} />
+      )} */}
+      {post.plot && (
+        <PlotGallery
+          plot={post.plot}
+          title="Interactive Plot"
+          width="100%"
+          height="600px"
+        />
       )}
     </article>
   );

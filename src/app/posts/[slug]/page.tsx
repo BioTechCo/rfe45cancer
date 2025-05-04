@@ -28,7 +28,7 @@ async function getPostData(slug: string) {
     title: data.title,
     date: data.date,
     volcano_plot: data.volcano_plot || "",
-    plots: data.plots || [],
+    plot: data.plot || "",
   };
 }
 
