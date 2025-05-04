@@ -21,14 +21,38 @@
 
 ---
 
-## GSE66313
+## Dbeta Calculation and DMR Filtering
 
-Preprocessing of GSE66313 and  data using the ChAMP package. 
-differentially methylated beta values are calculated.
-Significant DMRs are identified for every gene.
+<div className="methodology-explanation">
+  <p>
+    Extensive preprocessing of GSE66313 and TCGA-BRCA methylation data was performed using the ChAMP package in R. 
+    This involved several critical steps:
+  </p>
+  
+  <ul>
+    <li><strong>Quality Control:</strong> Removal of low-quality probes, SNP-related probes, and cross-reactive probes</li>
+    <li><strong>Normalization:</strong> BMIQ normalization to adjust for probe type bias (Infinium I vs II)</li>
+    <li><strong>Batch Effect Correction:</strong> ComBat algorithm was applied to remove potential batch effects</li>
+    <li><strong>Differential Methylation Analysis:</strong> Calculated differentially methylated beta values (Dbeta) between tumor and normal tissues</li>
+    <li><strong>Statistical Filtering:</strong> Applied significance threshold of p &lt; 0.05 and absolute Dbeta &gt; 0.2</li>
+    <li><strong>Annotation:</strong> DMRs were mapped to genes based on their genomic locations and proximity to TSS (Transcription Start Sites)</li>
+  </ul>
+  
+  <p>
+    The resulting differentially methylated regions (DMRs) represent critical epigenetic alterations that may drive breast cancer development and progression.
+    Positive Dbeta values indicate hypermethylation in cancer tissues, while negative values represent hypomethylation.
+  </p>
+</div>
 
-<DbetaPie dataset="GSE66313"/>
-<DbetaPie dataset="TCGA_BRCA_20250119"/>
+<div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <DbetaPie dataset="GSE66313" dataset_name="GSE66313" />
+    </div>
+    <div style={{ flex: 1, padding: '10px' }}>
+        <DbetaPie dataset="TCGA_BRCA_20250119" dataset_name="TCGA-BRCA" />
+    </div>
+</div>
+
 
 ## Joined Data Analysis
 
