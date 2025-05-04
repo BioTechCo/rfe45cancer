@@ -1,0 +1,9 @@
+## Data Visualization
+
+Visualizations like the one below help interpret complex datasets.
+
+![Sample Image](/images/vp_TCGA_BRCA.png)
+
+For interactive exploration, check out the Plotly graph below:
+
+[Interactive Plot](/plots/pca.html)
