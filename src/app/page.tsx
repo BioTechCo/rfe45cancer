@@ -39,7 +39,7 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">RFE45Cancer: DNA methylation and cancer</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center">遞迴特徵刪除技術應用於生物標記篩選及癌症精準診斷之研究</h1>
       <PostList posts={posts} />
     </div>
   );

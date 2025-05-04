@@ -2,14 +2,14 @@
 
 ---
 
-- TCGA-BRCA 美國癌症基因體圖譜計畫
-- GSE66313 高通量基因表達數據庫
+- TCGA-PRAD 美國癌症基因體圖譜計畫
+- GSE269244 高通量基因表達數據庫
 
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'stretch' }}>
     <div style={{ flex: 1, padding: '10px' }}>
         <ImageGallery 
-            image="/breast/vp_TCGA_BRCA.png"
-            title="TCGA-BRCA Volcano Plot"
+            image="/prostate/vp_TCGA_PRAD.png"
+            title="TCGA-PRAD Volcano Plot"
             alt="Volcano Plot"
         />
     </div>
@@ -25,7 +25,7 @@
 
 <div className="methodology-explanation">
   <p>
-    Extensive preprocessing of GSE66313 and TCGA-BRCA methylation data was performed using the ChAMP package in R. 
+    Extensive preprocessing of GSE269244 and TCGA-PRAD methylation data was performed using the ChAMP package in R. 
     This involved several critical steps:
   </p>
   
@@ -46,10 +46,10 @@
 
 <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
     <div style={{ flex: 1, padding: '10px' }}>
-        <DbetaPie dataset="GSE66313" dataset_name="GSE66313" />
+        <DbetaPie dataset="GSE269244" dataset_name="GSE269244" />
     </div>
     <div style={{ flex: 1, padding: '10px' }}>
-        <DbetaPie dataset="TCGA_BRCA_20250119" dataset_name="TCGA-BRCA" />
+        <DbetaPie dataset="GDC_prostate_tissue" dataset_name="TCGA-PRAD" />
     </div>
 </div>
 
@@ -58,7 +58,7 @@
 
 <p>
     After filtering the DMRs from both datasets, we joined the two datasets to create a comprehensive dataset for further analysis.
-    The joined dataset contains a total of <span style={{ backgroundColor: '#FFFF00' }}>88 gene</span>, whose similarity was calculated using GO (Gene Ontology) terms.
+    The joined dataset contains a total of <span style={{ backgroundColor: '#FFFF00' }}>156 gene</span>, whose similarity was calculated using GO (Gene Ontology) terms.
     The GO terms were obtained from the Ensembl database, and the similarity was calculated using the GOSemSim package in R.
 </p>
 
@@ -66,28 +66,28 @@
     <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px' }}>
         <div style={{ flex: 1, padding: '10px' }}>
             <ImageGallery 
-                image="/breast/planA/joined/section_5/hierarchical_clustering_simple_sum.png"
+                image="/prostate/planA/joined/section_5/hierarchical_clustering_simple_sum.png"
                 title="Simple Sum Clustering"
                 alt="Hierarchical clustering using simple sum"
             />
         </div>
         <div style={{ flex: 1, padding: '10px' }}>
             <ImageGallery 
-                image="/breast/planA/joined/section_5/hierarchical_clustering_weighted_sum.png"
+                image="/prostate/planA/joined/section_5/hierarchical_clustering_weighted_sum.png"
                 title="Weighted Sum Clustering"
                 alt="Hierarchical clustering using weighted sum"
             />
         </div>
         <div style={{ flex: 1, padding: '10px' }}>
             <ImageGallery 
-                image="/breast/planA/joined/section_5/hierarchical_clustering_consensus.png"
+                image="/prostate/planA/joined/section_5/hierarchical_clustering_consensus.png"
                 title="Consensus Clustering"
                 alt="Hierarchical clustering using consensus method"
             />
         </div>
     </div>
     <ImageGallery 
-        image="/breast/planA/joined/section_5/hierarchical_clustering_compare.png"
+        image="/prostate/planA/joined/section_5/hierarchical_clustering_compare.png"
         title="Hierarchical Clustering Comparison"
         alt="Comparison of different clustering methods"
     />
@@ -105,7 +105,7 @@
 
 The table below shows the gene combinations that achieved the highest classification performance:
 
-<MdxTable markdown={`| Gene Set | Gene 1 | Gene 2 | Gene 3 | Gene 4 | Accuracy | Recall | Specificity | Precision | F1 Score | AUC |
-|---------|--------|--------|--------|--------|----------|--------|-------------|-----------|----------|-----|
-| Set 1 | CFTR | CNTNAP5 | PFN3 | SLC2A10 | 0.932 | 1.000 | 0.864 | 0.880 | 0.936 | 0.997 |
-| Set 2 | CNTNAP5 | GNG4 | RGS22 | SLC2A2 | 0.932 | 1.000 | 0.864 | 0.880 | 0.936 | 0.996 |`} />
+<MdxTable markdown={`| Gene Set | Gene 1 | Gene 2 | Gene 3 | Accuracy | Recall | Specificity | Precision | F1 Score | AUC |
+|--------|--------|--------|--------|----------|--------|-------------|-----------|----------|-----|
+| Set | FBXO30	| KLHDC8A|	PYCARD | 0.898529 |0.973529 |0.823529| 0.846478 |0.905467 | 0.92154|`} />
+
