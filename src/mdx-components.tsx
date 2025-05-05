@@ -1,11 +1,11 @@
-import type { MDXComponents } from 'mdx/types';
-import Image from 'next/image';
-import ImageGallery from '@/components/ImageGallery';
-import PlotGallery from '@/components/PlotGallery';
-import DbetaPie from '@/components/DbetaPie';
-import MdxTable from '@/components/MdxTable';
+import type { MDXComponents } from "mdx/types";
+import Image from "next/image";
+import ImageGallery from "@/components/ImageGallery";
+import PlotGallery from "@/components/PlotGallery";
+import DbetaPie from "@/components/DbetaChart";
+import MdxTable from "@/components/MdxTable";
 
-// This file allows you to provide custom React components 
+// This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
 // React component you want, including components from
 // other libraries.
@@ -18,7 +18,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     p: (props) => <p className="mb-4" {...props} />,
     img: (props) => (
       <Image
-        alt={props.alt || ''}
+        alt={props.alt || ""}
         width={720}
         height={400}
         className="rounded-md object-cover"

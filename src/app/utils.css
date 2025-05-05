@@ -1,0 +1,9 @@
+.all-title {
+    background-color: rgba(142, 175, 161, 0.5); /* ✅ 用 rgba 而非 rgb(,,50%) */
+    text-align: center;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* ✅ 透明度用 0.4 而非百分比 */
+  }
