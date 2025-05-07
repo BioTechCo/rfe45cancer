@@ -45,9 +45,9 @@ const data = {
           { "name": "3'UTR", "value": 933 },
           { "name": "5'UTR", "value": 2221 },
           { "name": "Body", "value": 10586 },
-          { "name": "ExonBnd", "value": 183 },
           { "name": "TSS1500", "value": 5766 },
-          { "name": "TSS200", "value": 1915 }
+          { "name": "TSS200", "value": 1915 },
+          { "name": "ExonBnd", "value": 183 }
         ],
         "dbeta": { "hyper": 9355, "hypo": 13201 }
       }
@@ -98,9 +98,9 @@ const data = {
           { "name": "3'UTR", "value": 1161 },
           { "name": "5'UTR", "value": 2245 },
           { "name": "Body", "value": 11309 },
-          { "name": "ExonBnd", "value": 225 },
           { "name": "TSS1500", "value": 6182 },
-          { "name": "TSS200", "value": 1671 }
+          { "name": "TSS200", "value": 1671 },
+          { "name": "ExonBnd", "value": 225 }
         ],
         "dbeta": { "hyper": 12070, "hypo": 11467 }
       }
