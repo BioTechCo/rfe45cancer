@@ -10,8 +10,9 @@ export default function About() {
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <div
         style={{
+          display: "flex",
           alignItems: "center",
-          justifyItems: "center",
+          justifyContent: "center",
         }}
       >
         <h1 className="all-title">About RFE45Cancer Project</h1>
